@@ -1,0 +1,83 @@
+eureka: 
+ client: 
+  serviceUrl:
+   defaultZone: ${EUREKA_DEFAULTZONE}
+
+spring: 
+ application: 
+  name: qiyi-zuul
+ http:
+    multipart:
+      max-file-size: 200Mb # Max file size，默认1M
+      max-request-size: 2500Mb     # Max request size，默认10M
+
+ redis:
+   host: ${REDIS_HOST}
+   # Redis服务器连接端口
+   port: ${REDIS_POST}
+   password: ${REDIS_PWD}
+   jedis:
+     pool:
+       #连接池最大连接数（使用负值表示没有限制）
+       max-active: 100
+       # 连接池中的最小空闲连接
+       max-idle: 10
+       # 连接池最大阻塞等待时间（使用负值表示没有限制）
+       max-wait: 100000
+   # 连接超时时间（毫秒）
+   timeout: 5000
+   #默认是索引为0的数据库
+   database: 0
+    
+zuul:
+  sensitive-headers:
+  prefix: /api
+  ribbon:
+    eager-load:
+      enabled: true
+  routes:
+    admin:
+     path: /admin/**
+     serviceId: grace-admin
+    common:
+      path: /common/**
+      serviceId: grace-common
+    module:
+      path: /module/**
+      serviceId: grace-module
+  host:
+    connect-timeout-millis: 7000
+    socket-timeout-millis: 7000
+  security:
+    tokenHeader: Authorization
+    loginUrl: /admin/auth/jwt/token
+    ignoredPaths: 
+      /admin/auth/jwt/token,/admin/auth/jwt/invalid,/admin/account/register,/module/app/arround/image,
+      /module/app/goods/page,/module/app/goods
+
+
+
+ribbon:
+  eureka:
+    enabled: true
+  ReadTimeout: 7000
+  ConnectTimeout: 7000
+  eager-load:
+    enabled: true
+    clients:
+      grace-admin
+      grace-common
+      grace-module
+
+jwt:
+  filter:
+    grace:
+      enable: false
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeout-in-milliseconds: 10000
