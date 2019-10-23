@@ -1,6 +1,0 @@
-
-{"properties": [{
-  "name": "spring.redis.pool-max-total",
-  "type": "java.lang.String",
-  "description": "A description for 'spring.redis.pool-max-total'"
-}]}
