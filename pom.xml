@@ -57,9 +57,11 @@
 		</dependency>
 		<!-- qiyi-common -->
 		<dependency>
-		    <groupId>com.ws.sample</groupId>
-		    <artifactId>qiyi-common</artifactId>
-		    <version>1.0.0</version>
+			<groupId>com.ws.sample</groupId>
+			<artifactId>qiyi-common</artifactId>
+			<version>1.0.0</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/src/main/resources/lib/qiyi-common-1.0.0.jar</systemPath>
 		</dependency>
 		<dependency>
 	        <groupId>org.projectlombok</groupId>

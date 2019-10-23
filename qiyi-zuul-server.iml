@@ -174,7 +174,15 @@
     <orderEntry type="library" name="Maven: com.auth0:java-jwt:3.3.0" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.9.3" level="project" />
     <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.11" level="project" />
-    <orderEntry type="library" name="Maven: com.ws.sample:qiyi-common:1.0.0" level="project" />
+    <orderEntry type="module-library">
+      <library name="Maven: com.ws.sample:qiyi-common:1.0.0">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/src/main/resources/lib/qiyi-common-1.0.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
     <orderEntry type="library" name="Maven: org.projectlombok:lombok:1.16.20" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba:fastjson:1.2.33" level="project" />
   </component>
