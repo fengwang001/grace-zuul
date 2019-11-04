@@ -26,11 +26,6 @@ spring:
       #默认是索引为0的数据库
       database: 0
 
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8771/eureka/
-
 server:
   port: 8770
 
