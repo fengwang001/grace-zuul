@@ -54,7 +54,7 @@ zuul:
     loginUrl: /admin/auth/jwt/token
     ignoredPaths: 
       /admin/auth/jwt/token,/admin/auth/jwt/invalid,/admin/account/register,/module/app/arround/image,
-      /module/app/goods/page,/module/app/goods
+      /module/app/goods/page,/module/app/goods,/module/pay/callback
 
 
 
