@@ -29,35 +29,6 @@ spring:
     #默认是索引为0的数据库
     database: 0
 
-    
-zuul:
-  sensitive-headers:
-  prefix: /api
-  ribbon:
-    eager-load:
-      enabled: true
-  routes:
-    admin:
-     path: /admin/**
-     serviceId: grace-admin
-    common:
-      path: /common/**
-      serviceId: grace-common
-    module:
-      path: /module/**
-      serviceId: grace-module
-  host:
-    connect-timeout-millis: 7000
-    socket-timeout-millis: 7000
-  security:
-    tokenHeader: Authorization
-    loginUrl: /admin/auth/jwt/token
-    ignoredPaths: 
-      /admin/auth/jwt/token,/admin/auth/jwt/invalid,/admin/account/register,/module/app/arround/image,
-      /module/app/goods/page,/module/app/goods
-
-
-
 ribbon:
   eureka:
     enabled: true
