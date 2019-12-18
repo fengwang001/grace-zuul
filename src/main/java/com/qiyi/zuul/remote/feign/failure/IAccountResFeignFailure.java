@@ -8,6 +8,6 @@ import org.springframework.stereotype.Component;
 public class IAccountResFeignFailure implements IAccountResFeign {
     @Override
     public CurrentAccount getAccountInfoByToken(String token) {
-        return new CurrentAccount();
+        return null;
     }
 }

@@ -55,8 +55,13 @@ zuul:
     loginUrl: /admin/auth/jwt/token
     ignoredPaths: 
       /admin/auth/jwt/token,/admin/auth/jwt/invalid,/admin/account/register,/module/app/arround/image,
-      /module/app/goods/page,/module/app/goods,/module/pay/callback, /module/app/video/list,
-      /module/app/video/page, /module/app/news, /module/app/singer/page
+      /module/app/goods/page,/module/app/goods,/module/pay/callback,/module/app/video/list,
+      /module/app/video/page,/module/app/news, /module/app/singer/page,
+      /module/app/music/**
+      ,/module/app/account/music/**
+      ,/module/app/radio/**
+#      /module/app/account/music/rank,/module/app/account/music/save
+#      ,/module/app/account/music/star, /module/app/account/music/info
 
 
 
