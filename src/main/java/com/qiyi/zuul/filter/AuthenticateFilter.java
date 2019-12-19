@@ -86,7 +86,7 @@ public class AuthenticateFilter extends ZuulFilter {
              }
             System.out.println("------"+token.toString());
             // token 过期
-            if(tokenUser.getExpire().isBefore(LocalDateTime.now())){
+            if(tokenUser != null && tokenUser.getExpire() != null && tokenUser.getExpire().isBefore(LocalDateTime.now())){
                 setFailedRequest(JSON.toJSONString(new NonLoginException("用户身份过期，请重新登录")),HttpStatus.SC_UNAUTHORIZED);
                 return null;
             }
@@ -111,7 +111,7 @@ public class AuthenticateFilter extends ZuulFilter {
     private boolean isStartWith(String requestUir){
         boolean flag = false;
         for (String s:config.getSecurity().getIgnoredPaths()){
-        	System.out.println(s);
+            s = StringUtils.substringBefore(s,"/**");
             if(requestUir.startsWith(s)){
                 flag = true;
             }
