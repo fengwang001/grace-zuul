@@ -2,7 +2,7 @@ spring:
   application:
     name: qiyi-zuul
   profiles:
-    active: test
+    active: local
   http:
     multipart:
       max-file-size: 200Mb # Max file size，默认1M
