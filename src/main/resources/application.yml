@@ -60,6 +60,7 @@ zuul:
       /module/app/music/**
       ,/module/app/account/music/**
       ,/module/app/radio/**
+      ,/admin/app/edition/**
 #      /module/app/account/music/rank,/module/app/account/music/save
 #      ,/module/app/account/music/star, /module/app/account/music/info
 
